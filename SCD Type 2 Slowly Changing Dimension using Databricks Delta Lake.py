@@ -1,4 +1,3 @@
-# Databricks notebook source
 from pyspark.sql import SparkSession
 from pyspark.sql.functions import to_date
 from pyspark.sql.types import StructType, StructField, IntegerType, StringType
@@ -96,20 +95,16 @@ from pyspark.sql.functions import row_number
 from pyspark.sql.functions import col
 
 
-# For non-null comp_keys (the updates)
 window_spec = Window.partitionBy("comp_key").orderBy(col("sales_date").desc())
 updates_df = merge_df.filter("comp_key is not null") \
                    .withColumn("row_num", row_number().over(window_spec)) \
                    .filter("row_num = 1") \
                    .drop("row_num")
 
-# For null comp_keys (the inserts) - take distinct rows
 inserts_df = merge_df.filter("comp_key is null").dropDuplicates()
 
-# Recombine the cleaned DataFrames
 clean_merge_df = updates_df.union(inserts_df)
 
-# Now perform the merge with clean data
 deltatable.alias("target").merge(
     clean_merge_df.alias("source"),
     "concat(target.id, target.name) = source.comp_key and target.active = 'Y'"
