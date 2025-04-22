@@ -4,23 +4,17 @@ It updates existing customer records with historical tracking (using effective_s
 The project simulates a real-world customer master dataset, incoming sales transactions, and uses a Delta Merge strategy to perform SCD Type 2 tracking.
 
 # Tech Stack
-Databricks - Cloud-based Spark platform
-Delta Lake - ACID transactions, time travel
-PySpark	- Data processing logic
-Python - Glue logic
-DBFS	- Databricks File System storage
+- Databricks - Cloud-based Spark platform
+- Delta Lake - ACID transactions, time travel
+- PySpark	- Data processing logic
+- Python - Glue logic
+- DBFS	- Databricks File System storage
 
 # Features
-Complete SCD Type 2 implementation with merge operations
-
-Address change detection logic
-
-Data quality checks pre-merge
-
-Production-ready patterns:
-
-Window functions for latest records
-
-Deduplication handling
-
-Delta Lake optimizations
+- Complete SCD Type 2 implementation with merge operations
+- Address change detection logic
+- Data quality checks pre-merge
+- Production-ready patterns:
+- Window functions for latest records
+- Deduplication handling
+- Delta Lake optimizations
