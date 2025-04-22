@@ -18,3 +18,11 @@ The project simulates a real-world customer master dataset, incoming sales trans
 - Window functions for latest records
 - Deduplication handling
 - Delta Lake optimizations
+
+
+
+SCD-Type-2-Implementation-with-Delta-Lake/
+├── 01_create_customer_data.py             # Script to create and save initial customer dataset as Delta table
+├── 02_create_sales_data.py                # Script to create and prepare sales dataset
+├── 03_merge_logic_scd2.py                 # Script that performs SCD2 merge logic between sales and customer data
+├── README.md                              # Full project explanation, setup, instructions
