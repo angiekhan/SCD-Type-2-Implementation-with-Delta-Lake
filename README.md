@@ -33,15 +33,15 @@ SCD-Type-2-Implementation-with-Delta-Lake/
 ```
 
 ## PySpark/Databricks Topics covered
-- PySpark DataFrame operations (filter, join, withColumn, concat, dropDuplicates, etc.)
-- Window functions (row_number, partitionBy, orderBy)
-- Delta Lake MERGE INTO (UPSERT) operation
+- PySpark DataFrame operations (filter, join, withColumn, concat, dropDuplicates, etc.)  [https://spark.apache.org/docs/latest/api/python/reference/pyspark.sql/dataframe.html](url)
+- Window functions (row_number, partitionBy, orderBy) [https://databricks-prod-cloudfront.cloud.databricks.com/public/4027ec902e239c93eaaa8714f173bcfc/968100988546031/157591980591166/8836542754149149/latest.html](url)
+- Delta Lake MERGE INTO (UPSERT) operation [https://docs.databricks.com/aws/en/delta/merge](url)
 - SCD Type 2 handling (marking old records inactive, inserting new records)
-- Databricks DBFS file storage and management
+- Databricks DBFS file storage and management [https://docs.databricks.com/aws/en/files/](url)
 
 ## Important Functions/Commands used
-DeltaTable.forPath()
-#RRGGBB merge(), whenMatchedUpdate(), whenNotMatchedInsert()
-Window.partitionBy().orderBy()
-row_number().over()
-concat(), col(), lit()
+```DeltaTable.forPath()```,
+```merge()```, ```whenMatchedUpdate()```, ```whenNotMatchedInsert()```,
+```Window.partitionBy().orderBy()```,
+```row_number().over()```,
+```concat()```, ```col()```, ```lit()```
